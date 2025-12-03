@@ -1,0 +1,3 @@
+Dec 3: Practiced closures
+Dec 4: Reviewed arrays
+Dec 5: Learned about comparison operators
