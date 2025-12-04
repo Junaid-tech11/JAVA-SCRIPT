@@ -1,0 +1,54 @@
+//objects can be declared in two ways:
+
+// 2 methods to make objects 
+
+//1.singleton
+//Object.create     // it is another way to make object through constructor method it makes singleton
+
+
+//2.object literals
+
+const mySym = Symbol("key1")
+
+
+const jsUser = {         // object decleration: it has key: value pair
+    //0: "Ali" ,
+    name: "Ali" ,           // both ways are correct vlaue can be any string number arrays object etc
+    age: 19,
+    "full name": "Ali Abbasi",
+    [mySym]: "mykey1",  ///this is the way to add symbol data in objects
+    location: "Pakistan",
+    email:"example.com",
+    isLoggedIn:false,
+    lastLoginDays:['Monday',"Saturday"]
+}
+
+// //to access the object
+// console.log(jsUser.email);
+// //other method is
+// console.log(jsUser["email"]);
+// console.log(jsUser["full name"]);
+// console.log( typeof jsUser.mySym);  //its type value is string but we have to use it in symbol
+// console.log(  jsUser[mySym]);   // this works totally fined
+
+// //how to change values in object
+// jsUser.email = "Umer@chat.gpt.com"
+// //to lock the value so it will never change use freeze
+// Object.freeze(jsUser)
+// jsUser.email = "Umer@chat.microsoft.com"  //the value is freeze
+// console.log(jsUser);
+
+
+jsUser.greeting = function(){
+    console.log("Hello JS user");
+    
+}
+jsUser.greeting2 = function(){
+    console.log(`Hello g user, ${this.name}`);  // string interpulation
+    
+}
+//console.log(jsUser.greeting);   //we can declare in both way without () or within ()
+console.log(jsUser.greeting());  // here it gives undefined because there is no return statement
+jsUser.greeting2()   // here it gives undefined because there is no return statement so we dont have to recall this or console this value just invoke that function
+
+
