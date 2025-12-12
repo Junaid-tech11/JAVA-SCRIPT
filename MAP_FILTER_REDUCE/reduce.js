@@ -16,21 +16,21 @@ const myNums2 = [5,10,15];
 const myTotal2 = myNums2.reduce( (acc,currval) =>  acc + currval ,0);
 console.log(myTotal2);      
 
-// const numbers = [1, 2, 3, 4, 5];
-// const sum = numbers.reduce((accumulator, currentValue) => {
-//     return accumulator + currentValue;  //accumalator is the total value returned after each iteration  
-//                                         //currentValue is the current element being processed in the array
-// }, 0);                                  // 0 is the initial value for the accumulator
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;  //accumalator is the total value returned after each iteration  
+                                        //currentValue is the current element being processed in the array
+}, 0);                                  // 0 is the initial value for the accumulator
 
-// console.log(sum); // Output: 15
+console.log(sum); // Output: 15
 
-// // Example 2: Using reduce to find the maximum value in an array
-// const values = [10, 5, 8, 20, 3];
-// const max = values.reduce((accumulator, currentValue) => {
-//     return Math.max(accumulator, currentValue);
-// }, values[0]); // Initial value is the first element of the array
+// Example 2: Using reduce to find the maximum value in an array
+const values = [10, 5, 8, 20, 3];
+const max = values.reduce((accumulator, currentValue) => {
+    return Math.max(accumulator, currentValue);
+}, values[0]); // Initial value is the first element of the array
 
-// console.log(max); // Output: 20
+console.log(max); // Output: 20
 
 const shoppingCart = [
     {item: 'phone', price: 699},
