@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Background Color Switcher</title>
+</head>
+.<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        transition: background-color 0.5s ease;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+        background-color: #333;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .canvas {
+        text-align: center;
+        margin-top: 50px;
+    }
+
+    .button {
+        display: inline-block;
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        border-radius: 50%;
+        cursor: pointer;
+        border: 2px solid #000;
+    }
+
+    #grey {
+        background-color: grey;
+    }
+
+    #white {
+        background-color: white;
+    }
+
+    #blue {
+        background-color: blue;
+    }
+
+    #yellow {
+        background-color: yellow;
+    }
+</style>
+
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a target="_blank" href="https://www.youtube.com"></a>
+    </nav>
+    <div class="canvas">
+        <h1>Color Scheme Switcher</h1>
+        <span class="button" id="grey"></span>
+        <span class="button" id="white"></span>
+        <span class="button" id="blue"></span>
+        <span class="button" id="yellow"></span>
+        <span class="button" id="purple"></span>
+        <h2>
+            Try clicking on one of the colors above
+            <span>to change the background Color of this Page!</span>
+        </h2>
+
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
