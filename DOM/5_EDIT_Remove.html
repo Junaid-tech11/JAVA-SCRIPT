@@ -1,0 +1,53 @@
+<!-- Edit and remove elements in Javascript -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Learning</title>
+</head>
+
+<body style="background-color: aquamarine; color: black;">
+    <ul class="language">
+        <li>Javascript</li>
+    </ul>
+</body>
+<script>
+    function addLanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').
+            appendChild(li)
+    }
+    addLanguage('Ruby on Rails')
+    addLanguage('Python')
+    addLanguage('Typescript')
+
+    // this approach is more optimize you are not triversing whole tree
+    function addOptimizeLanguage(langName) {
+        const li = document.createElement('li')
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+
+    }
+    addOptimizeLanguage('Golang')
+
+    //To Edit the value
+    const second_lang = document.querySelector("li:nth-child(2)")
+    //second_lang.innerHTML = 'MOJO'       this is not optimize approach so we can use alternate method
+    const newli = document.createElement('li')
+    newli.textContent = "Java"  // it is alternate of innerHtml
+    second_lang.replaceWith(newli)
+
+    //other method
+    const third_lang = document.querySelector("li:nth-child(3)")
+    third_lang.outerHTML = '<li>JavaScript</li>'
+
+    //remove the value 
+    const lastLang = document.querySelector('li:last-child')
+    lastLang.remove()
+</script>
+
+</html>

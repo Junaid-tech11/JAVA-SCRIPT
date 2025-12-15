@@ -1,0 +1,99 @@
+DOM COMPLETE NOTES
+The Document Object Model (DOM) is a structured way for web browsers to represent and interact with HTML pages, treating every part of a page (like tags, text, and attributes) as objects.(It's how JavaScript “talks” to HTML.)
+The DOM is explained as a model that represents the structure of an HTML document as a tree of objects (head, body, p, img ). Every element, attribute, and text is considered a "node" in this tree
+
+    Example HTML:
+    <html>
+    <body>
+        <h1>Hello</h1>
+        <p>Paragraph</p>
+    </body>
+    </html>
+
+    Corresponding DOM Tree:
+
+    Document
+    └── html
+        └── body
+            ├── h1
+            │    └── "Hello"
+            └── p
+                └── "Paragraph"
+
+# Window and Document :-
+    windows is a global object which contains document object(HTML)
+
+    console.log(window.document); // Outputs the entire HTML document and methods for manipulation
+    console.log(document); //outputs entire document
+    console.dir(windows); //Outputs the entire HTML document and methods for manipulation
+
+
+!! Collections like HTMLCollection or NodeList are used to handle groups of elements, but they differ from standard arrays.
+
+###########LEC-2
+
+-Summary+Tips :
+1.document.getElementbyId("id-name") : returns html node of specified id
+2.document.getElementbyClassName("className") : returns HTML Collection of nodes with className. (this HTMLCollection can be converted to array using Array.from())
+3.getAttribute
+4.setAttribute('class', 'new-class-name old-class-name') // it overwrites in html document , it is preffered to pass old-name also
+5.innerHTML: <tag> ...x... <tag>   returns ...x... (whats inside tag)
+6.textContent : returns all text content inside tag
+7.innerText : returns text that is visible ,(of selected node)
+8.querySelector(css-selector) : returns first occurence
+9.querySelectorAll(css-selector) : returns NodeList of all occurences
+
+DEtails:
+
+1.Accessing DOM elements:-
+let el = document.getElementById("myId");
+    let el = document.getElementsByClassName("myClass"); // HTMLCollection
+    let el = document.getElementsByTagName("p"); // HTMLCollection
+    let el = document.querySelector(".myClass"); // First match
+    let all = document.querySelectorAll(".myClass"); // NodeList
+
+2.Changing Content
+    el.innerHTML = "<strong>Bold Text</strong>";
+    el.textContent = "Plain text only";
+    el.innerText = "Visible text only";
+
+3.Changing Attributes
+    el.setAttribute("src", "image.jpg"); //it overwrites
+    let src = el.getAttribute("src");
+    el.id = "newId";
+    src = "image.png";
+
+4.Changing Styles
+    Inline style:
+        el.style.color = "red";
+        el.style.backgroundColor = "yellow";
+    Using CSS classes:
+        el.classList.add("active");
+        el.classList.remove("hidden");
+        el.classList.toggle("dark-mode");
+
+5.Traversing the DOM (code details in two.html)
+    Parent element:
+        el.parentElement;
+    Child elements:
+        el.children; // HTMLCollection
+    First/Last child:
+        el.firstElementChild;
+        el.lastElementChild;
+    Siblings:
+        el.nextElementSibling;
+        el.previousElementSibling;
+
+
+6.Creating & Removing Elements (code details in three.html and four.html)
+    Create:
+        let newEl = document.createElement("p");
+        newEl.textContent = "New paragraph";
+        document.body.appendChild(newEl);
+    Insert before specific element:
+        parent.insertBefore(newEl, referenceElement);
+    Remove:
+        el.remove(); // Modern
+        parent.removeChild(child); // Older 
+    Replace:
+        el.replaceWith(newEle)
