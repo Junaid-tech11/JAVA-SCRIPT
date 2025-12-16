@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital CLock</title>
+</head>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: #222;
+        color: white;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 30px;
+        background: #111;
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 18px;
+    }
+
+    .center {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+    }
+
+    .banner {
+        font-size: 36px;
+        margin-bottom: 20px;
+    }
+
+    #clock {
+        font-size: 40px;
+        background: orange;
+        padding: 20px 40px;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    }
+</style>
+
+<body>
+    <nav>
+        <a href="/" aria-current="page">Home</a>
+        <a target="_blank" href="https://www.youtube.com/watch?v=Z5bY6pG6kXw">Watch Tutorial</a>
+    </nav>
+    <div class="center">
+        <div class="banner">Your Local time </div>
+        <div id="clock"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
