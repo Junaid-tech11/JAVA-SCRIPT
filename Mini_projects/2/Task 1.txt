@@ -1,0 +1,45 @@
+🗓️ Day 1: The Interactive Modal (Prep)
+The Goal: A button that opens a box. A generic "X" button that closes it.
+
+Step 1: The HTML (The Skeleton)
+You need 3 main elements in your index.html:
+
+The Trigger: A simple <button> with an ID (e.g., open-btn) and text like "Show Offer".
+
+The Overlay (Background): A <div> that covers the whole screen. Give it an ID (e.g., modal-overlay).
+
+Tip: Inside this div, put your actual "White Box" content (Heading, Text, and a "Close" button with an ID like close-btn).
+
+Link your files: Make sure to add <script src="script.js"></script> at the bottom of the body.
+
+Step 2: The CSS (The Look)
+In your style.css (or using Tailwind classes):
+
+Hide the Modal: The modal should be invisible by default. Create a class called .hidden with display: none; (or use Tailwind's hidden).
+
+Style the Overlay: The overlay needs to be fixed, inset-0 (top/left/right/bottom 0), and have a semi-transparent background (e.g., bg-black with opacity).
+
+Center the Box: Use Flexbox on the Overlay (flex, justify-center, items-center) to put the white box dead center.
+
+Step 3: The JavaScript (The Brains)
+Open script.js. Do not copy code! Write this logic line-by-line:
+
+Select Elements: Create 3 variables (modal, openBtn, closeBtn) using document.getElementById or querySelector to grab your HTML elements.
+
+The "Open" Function:
+
+Add an event listener to openBtn for a 'click'.
+
+Inside the function, remove the .hidden class from your modal.
+
+The "Close" Function:
+
+Add an event listener to closeBtn for a 'click'.
+
+Inside the function, add the .hidden class back to your modal.
+
+Bonus (Click Outside):
+
+Add an event listener to the window.
+
+Check if (e.target === modal). If yes, hide the modal.
