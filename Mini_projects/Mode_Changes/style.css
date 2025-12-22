@@ -1,0 +1,24 @@
+/* 1. Define the Defaults (Light Mode) */
+:root {
+    --bg-color: white;
+    --text-color: black;
+}
+
+
+/* 2. Define the Override (Dark Mode) */
+/* When the body has this class, we simply swap the values in the buckets */
+.dark-mode {
+    --bg-color: black; 
+    --text-color: white;
+}
+
+/* 3. The Connection (Crucial Step!) */
+/* We tell the body to ALWAYS use whatever is in the variable buckets */
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    
+    /* smooth transition makes it look fancy */
+    transition: background-color 0.3s, color 0.3s; 
+}
