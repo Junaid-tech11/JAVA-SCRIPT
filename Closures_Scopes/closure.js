@@ -18,7 +18,9 @@
     // Closure basically means that a function bind together with its lexical environment.Or function along with its lexical scope is known as Closure.
     // The function y() was bonded to the variables of function x(). That is, y() forms a closure and it has access to it's parent's lexical scope.
     // Closure in JS is a form of lexical scoping used to preserve variables from the outer scope(x()) of a function in the inner scope of a function (y()). 
-    // ** A closure is the combination of a function bundled together(enclosed) with references to its surrounding state(the lexical environment).In other words, a closure gives you access to an outer function's scope from an inner function. In JS, closures are created every time a function is created, at function creation time.
+    // ** A closure is the combination of a function bundled together(enclosed) with references to its surrounding state(the lexical environment).
+    // In other words, a closure gives you access to an outer function's scope from an inner function.
+    //  In JS, closures are created every time a function is created, at function creation time.
 
     // 2. In JS, we can assign function to variables.
     //     Eg : -
