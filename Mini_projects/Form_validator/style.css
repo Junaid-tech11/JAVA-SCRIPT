@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+body{
+    background-color: gray;
+}
+.container{
+    flex-direction: column;
+    align-content: space-between;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    gap: 15px;
+    border: none;
+
+}
+
+#login{
+    background-color: blueviolet;
+    cursor: pointer;
+}
