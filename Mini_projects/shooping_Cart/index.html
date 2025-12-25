@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="card">
+        <h2>Fresh Fruit Market</h2>
+
+        <div class="button-group">
+            <button onclick="addToCart('Apple', 10)">🍎 Apple ($10)</button>
+            <button onclick="addToCart('Banana', 5)">🍌 Banana ($5)</button>
+            <button onclick="addToCart('Orange', 8)">🍊 Orange ($8)</button>
+        </div>
+
+        <ul id="cart-list">
+        </ul>
+
+        <h3 class="total">Total: $<span id="total-price">0</span></h3>
+    </div>
+
+</body>
+<script src="script.js"></script>
+
+</html>
