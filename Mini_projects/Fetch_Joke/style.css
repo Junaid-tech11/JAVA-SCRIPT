@@ -1,0 +1,59 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    background-color: #093069;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.card{
+
+background-color: rgb(171, 44, 44);
+padding: 2rem;
+border-radius: 10px;
+border: 1px solid black;
+box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+text-align: center;
+max-width: 500px;
+width: 50%;
+height:40vh;
+
+    
+}
+#stage{
+    font-size: 1.2rem;
+    columns: #333;
+    margin: 20px 0;
+    line-height: 1.5;
+    gap: 10px;
+}
+#trigger{
+    padding: 10px 5px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    cursor: pointe;
+    transition: all 0.4s ease;
+    font-size: 100%;
+    margin-top: 15px;
+
+}
+#trigger:hover {
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
+}
+
+
+#trigger:active {
+    transform: translateY(0); 
+    box-shadow: none;         
+}

@@ -13,4 +13,4 @@ console.log("har/".length);
 //explore the includes, startswith , ends with functions of a string?
 const greet = "Hello, I am computer science student from Virtual Uni of pakistan."
 console.log(greet.length);
-console.log(greet.includes("Hello"));   
+console.log(greet.includes("Hello"));    
