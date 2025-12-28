@@ -1,0 +1,169 @@
+/* RESET & GLOBAL STYLES */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    /* Modern Gradient Background */
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Starts content in center */
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 50px; /* Gives some space from top */
+    padding-bottom: 50px;
+}
+
+/* THE INPUT CARD */
+.card {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2.5rem;
+    
+    /* Modern Shadow instead of Border */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
+    border-radius: 15px;
+    border: none; /* Removed the black border */
+    
+    width: 90%;       /* Responsive width */
+    max-width: 450px; /* Never gets too big */
+    text-align: center;
+    margin-bottom: 25px; /* Push the list down */
+}
+
+/* Header Text inside Card */
+.card h2 { /* Assuming you have an h2 for "My Tasks" */
+    color: #333;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+/* INPUT FIELD */
+#user-text {
+    display: block;
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 25px; /* Rounded pill shape */
+    font-size: 16px;
+    outline: none;
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+}
+
+#user-text:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 8px rgba(102, 126, 234, 0.4);
+}
+
+/* ADD BUTTON */
+#generic {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(to right, #667eea, #764ba2); /* Gradient Button */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+#generic:hover {
+    transform: translateY(-2px); /* Moves up slightly */
+    box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
+}
+
+#generic:active {
+    transform: scale(0.98); /* Click effect */
+}
+
+/* TASK LIST CONTAINER (Assuming the UL/Div has id="data") */
+#data {
+    width: 90%;
+    max-width: 450px;
+    list-style: none; /* Remove bullet points */
+}
+
+/* INDIVIDUAL TASK ITEMS */
+.todo-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    transition: transform 0.2s ease;
+    animation: slideIn 0.3s ease; /* Animation when added */
+}
+
+.todo-item:hover {
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+/* TASK TEXT */
+.todo-item span {
+    flex: 1; /* Takes up all available space */
+    font-size: 16px;
+    color: #333;
+    word-break: break-all; /* Prevents long words breaking layout */
+    margin-right: 10px;
+}
+
+/* BUTTON GROUP */
+.todo-item button {
+    padding: 8px 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    transition: opacity 0.2s;
+    margin-left: 5px;
+}
+
+.todo-item button:hover {
+    opacity: 0.8;
+}
+
+/* Done Button */
+.todo-item .done-btn {
+    background-color: #48bb78; /* Softer Green */
+    color: white;
+}
+
+/* Delete Button */
+.todo-item .delete-btn {
+    background-color: #f56565; /* Softer Red */
+    color: white;
+}
+
+/* COMPLETED STATE */
+.completed {
+    text-decoration: line-through;
+    color: #a0aec0;
+    transition: all 0.3s ease;
+}
+
+/* Simple Animation */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
