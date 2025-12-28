@@ -1,4 +1,4 @@
-/* RESET & GLOBAL STYLES */
+
 * {
     padding: 0;
     margin: 0;
@@ -7,50 +7,44 @@
 }
 
 body {
-    /* Modern Gradient Background */
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     display: flex;
     align-items: center;
-    justify-content: center; /* Starts content in center */
+    justify-content: center;
     flex-direction: column;
     min-height: 100vh;
-    padding-top: 50px; /* Gives some space from top */
+    padding-top: 50px;
     padding-bottom: 50px;
 }
 
-/* THE INPUT CARD */
 .card {
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 2.5rem;
-    
-    /* Modern Shadow instead of Border */
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); 
     border-radius: 15px;
-    border: none; /* Removed the black border */
-    
-    width: 90%;       /* Responsive width */
-    max-width: 450px; /* Never gets too big */
+    border: none;
+    width: 90%; 
+    max-width: 450px;
     text-align: center;
-    margin-bottom: 25px; /* Push the list down */
+    margin-bottom: 25px;
 }
 
-/* Header Text inside Card */
-.card h2 { /* Assuming you have an h2 for "My Tasks" */
+.card h2 {
     color: #333;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
-/* INPUT FIELD */
+
 #user-text {
     display: block;
     width: 100%;
     padding: 12px 15px;
     border: 2px solid #e0e0e0;
-    border-radius: 25px; /* Rounded pill shape */
+    border-radius: 25px;
     font-size: 16px;
     outline: none;
     transition: all 0.3s ease;
@@ -62,12 +56,12 @@ body {
     box-shadow: 0 0 8px rgba(102, 126, 234, 0.4);
 }
 
-/* ADD BUTTON */
+
 #generic {
     display: block;
     width: 100%;
     padding: 12px;
-    background: linear-gradient(to right, #667eea, #764ba2); /* Gradient Button */
+    background: linear-gradient(to right, #667eea, #764ba2);
     color: white;
     border: none;
     border-radius: 25px;
@@ -79,22 +73,25 @@ body {
 }
 
 #generic:hover {
-    transform: translateY(-2px); /* Moves up slightly */
+    transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(118, 75, 162, 0.4);
 }
 
 #generic:active {
-    transform: scale(0.98); /* Click effect */
+    transform: scale(0.98);
 }
 
-/* TASK LIST CONTAINER (Assuming the UL/Div has id="data") */
+
+
+
 #data {
-    width: 90%;
+    width: 100%;           
     max-width: 450px;
-    list-style: none; /* Remove bullet points */
+    list-style: none;
+    padding: 0;
+    margin-top: 15px;      
 }
 
-/* INDIVIDUAL TASK ITEMS */
 .todo-item {
     display: flex;
     justify-content: space-between;
@@ -103,22 +100,27 @@ body {
     padding: 15px;
     margin-bottom: 12px;
     border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Soft shadow */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     transition: transform 0.2s ease;
-    animation: slideIn 0.3s ease; /* Animation when added */
+    animation: slideIn 0.3s ease;
+    
+    width: 100%;          
 }
 
 .todo-item:hover {
-    transform: scale(1.02); /* Slight zoom on hover */
+    transform: scale(1.02);
 }
 
-/* TASK TEXT */
 .todo-item span {
-    flex: 1; /* Takes up all available space */
+    flex-grow: 1;          
+    text-align: left;     
     font-size: 16px;
     color: #333;
-    word-break: break-all; /* Prevents long words breaking layout */
-    margin-right: 10px;
+    margin-right: 10px;  
+    
+
+    word-break: break-word; 
+    overflow-wrap: break-word; 
 }
 
 /* BUTTON GROUP */
@@ -131,32 +133,34 @@ body {
     font-weight: bold;
     transition: opacity 0.2s;
     margin-left: 5px;
+    
+
+    flex-shrink: 0; 
+    white-space: nowrap;
 }
+
+
 
 .todo-item button:hover {
     opacity: 0.8;
 }
 
-/* Done Button */
 .todo-item .done-btn {
-    background-color: #48bb78; /* Softer Green */
+    background-color: #48bb78;
     color: white;
 }
 
-/* Delete Button */
 .todo-item .delete-btn {
-    background-color: #f56565; /* Softer Red */
+    background-color: #f56565;
     color: white;
 }
 
-/* COMPLETED STATE */
 .completed {
     text-decoration: line-through;
     color: #a0aec0;
     transition: all 0.3s ease;
 }
 
-/* Simple Animation */
 @keyframes slideIn {
     from {
         opacity: 0;
