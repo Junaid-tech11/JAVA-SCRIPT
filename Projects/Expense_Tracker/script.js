@@ -8,7 +8,7 @@ const text = document.getElementById('text');
 const amount = document.getElementById('amount');
 
 
-
+//it is used to saved the value after browser Refresh
 const localStorageTransactions = JSON.parse(
     localStorage.getItem('transactions')
 );
@@ -58,8 +58,7 @@ function updateValues() {
 
     // 4. Calculate Expense (Only negative numbers)
     const expense = (
-        amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) *
-        -1
+        amounts.filter(item => item < 0).reduce((acc, item) => (acc += item), 0) * -1
     ).toFixed(2);
 
     // 5. Update the HTML
