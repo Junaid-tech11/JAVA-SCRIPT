@@ -7,11 +7,13 @@ const columns = [todo, progress, done];
 let dragElement = null
 
 
-function addTask(title, desc, column) {
+function addTask(title, desc, column, id) {
     const div = document.createElement('div')
 
     div.classList.add('task')
     div.setAttribute('draggable', true)
+    //this is the key we attach the id to the html
+    div.setAttribute('data-id', id)
 
     div.innerHTML = `
             <h2>${title}</h2>
@@ -42,7 +44,8 @@ function updateTaskCount() {
         tasksData[col.id] = Array.from(tasks).map(t => {
             return {
                 title: t.querySelector('h2').innerText,
-                desc: t.querySelector('p').innerText
+                desc: t.querySelector('p').innerText,
+                id: t.dataset.id
 
 
             }
@@ -58,6 +61,7 @@ function updateTaskCount() {
 
 }
 
+
 if (localStorage.getItem('tasks')) {
     //convert the string to JSON Format
     const data = JSON.parse(localStorage.getItem('tasks'))
@@ -65,7 +69,8 @@ if (localStorage.getItem('tasks')) {
     for (const col in data) {
         const column = document.querySelector(`#${col}`);
         data[col].forEach(task => {
-            addTask(task.title, task.desc, column)
+
+            addTask(task.title, task.desc, column, task.id)
         })
 
     }
@@ -104,40 +109,13 @@ function addDragEventsOnColumn(column) {
     column.addEventListener('drop', (e) => {
         e.preventDefault();
 
-
-
-        columns.forEach(col => {
-            const tasks = col.querySelectorAll('.task');
-            const count = col.querySelector('.right');
-
-            tasksData[col.id] = Array.from(tasks).map(t => {
-                return {
-                    title: t.querySelector('h2').innerText,
-                    desc: t.querySelector('p').innerText
-
-
-                }
-            })
-
-            //local storage in string
-            localStorage.setItem('tasks', JSON.stringify(tasksData));
-            count.innerText = tasks.length;
-
-
-        })
-
+        // 1. Move the element visually
         column.appendChild(dragElement);
-        column.classList.remove('hover-over')
+        column.classList.remove('hover-over');
 
+        // 2. Update the "Backend" (Array + LocalStorage)
         updateTaskCount();
-
-
-
-
-
-
     })
-
 
 
 }
@@ -167,8 +145,9 @@ modalBg.addEventListener('click', () => {
 addTaskButton.addEventListener('click', () => {
     const taskTitle = document.querySelector('#task-title-input').value
     const desTitle = document.querySelector('#task-description-input').value
+    const newid = Date.now()
 
-    addTask(taskTitle, desTitle, todo)
+    addTask(taskTitle, desTitle, todo, newid)
     updateTaskCount
 
     modal.classList.remove('active')

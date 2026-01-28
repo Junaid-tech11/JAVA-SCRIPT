@@ -54,8 +54,6 @@ body{
     color:var(--primary-text-color);
 }
 
-
-
 nav{
     padding: var(--nav-padding);
     display: flex;
