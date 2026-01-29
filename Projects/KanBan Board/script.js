@@ -1,4 +1,4 @@
-let tasksData = {}
+let tasksData = {} //empty object to store the task
 
 const todo = document.querySelector('#todo');
 const progress = document.querySelector('#progress');
@@ -14,6 +14,10 @@ function addTask(title, desc, column, id) {
     div.setAttribute('draggable', true)
     //this is the key we attach the id to the html
     div.setAttribute('data-id', id)
+
+
+
+
 
     div.innerHTML = `
             <h2>${title}</h2>
