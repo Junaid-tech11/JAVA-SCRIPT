@@ -178,6 +178,8 @@ section .task-column .task button{
 
 }
 
+
+
 .modal .center button{
     background-color: var(--bg-btn-color);
     border: none;
