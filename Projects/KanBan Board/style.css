@@ -59,7 +59,9 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: sticky;
+
+
+        position: sticky;
     background-color: var(--bg-color);
 }
 
@@ -177,6 +179,13 @@ section .task-column .task button{
     border-radius: var(--border-radius-s);
 
 }
+
+
+
+
+
+
+
 
 
 
