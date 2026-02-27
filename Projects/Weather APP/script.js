@@ -4,10 +4,10 @@ const cityInput = document.getElementById('city-input');
 const searchBtn = document.getElementById('search-btn');
 const cityDisplay = document.getElementById('city-name');
 const tempDisplay = document.getElementById('temp');
-const description = document.getElementById('description'); // Make sure you have <h3 id="description"> in HTML if you use this!
+const description = document.getElementById('description');
 
-// --- THE FIX IS HERE ---
-// We use querySelector because your HTML has class="humidity" and class="wind"
+
+// We use querySelector  HTML has class="humidity" and class="wind"
 const humidity = document.querySelector(".humidity");
 const wind = document.querySelector(".wind");
 const weatherIcon = document.getElementById("weather-icon");
@@ -17,14 +17,12 @@ async function checkWeather(city) {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     const response = await fetch(apiUrl);
+    const data = await response.json();
 
-    if (response.status == 404) {
+    if (!data.main) {
         alert("Invalid City Name!");
         return;
     }
-
-    const data = await response.json();
-    console.log(data);
 
     // Update Basic Info
     cityDisplay.innerHTML = data.name;
@@ -46,6 +44,7 @@ async function checkWeather(city) {
 searchBtn.addEventListener('click', () => {
     checkWeather(cityInput.value);
 });
+
 
 cityInput.addEventListener('keydown', (event) => {
     if (event.key === "Enter") {
