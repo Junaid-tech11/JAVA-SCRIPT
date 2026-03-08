@@ -1,4 +1,6 @@
-const apiKey = '278679fd626e9671372a7b5e4dc07879';
+// Get a free API key from https://openweathermap.org/api and paste it below.
+// Example: const apiKey = 'abcd1234...';
+const apiKey = 'YOUR_API_KEY_HERE';
 
 const cityInput = document.getElementById('city-input');
 const searchBtn = document.getElementById('search-btn');
@@ -14,6 +16,11 @@ const weatherIcon = document.getElementById("weather-icon");
 // -----------------------
 
 async function checkWeather(city) {
+    if (!apiKey || apiKey === 'YOUR_API_KEY_HERE') {
+        alert('Please set your OpenWeatherMap API key in script.js (see the top of the file).');
+        return;
+    }
+
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
     const response = await fetch(apiUrl);
@@ -50,4 +57,14 @@ cityInput.addEventListener('keydown', (event) => {
     if (event.key === "Enter") {
         checkWeather(cityInput.value);
     }
+});
+
+// Load a default city on page load (optional)
+window.addEventListener('load', () => {
+    if (!apiKey || apiKey === 'YOUR_API_KEY_HERE') {
+        console.warn('Set your OpenWeatherMap API key in script.js to enable live weather data.');
+        return;
+    }
+
+    checkWeather('New York');
 });
