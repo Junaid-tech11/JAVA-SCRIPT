@@ -11,11 +11,6 @@ signupbtn.onclick = function () {
 }
 
 
-
-
-
-
-
 signinbtn.onclick = function () {
     title.innerHTML = 'Login ';
     nameFeild.style.display = 'none';
