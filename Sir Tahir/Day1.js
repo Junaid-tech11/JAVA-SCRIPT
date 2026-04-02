@@ -108,11 +108,13 @@ function greet(name) {
 }
 console.log(greet('Junaid')); // Output: Hello, Junaid!
 
+
 // Date
 let currentDate = new Date();
 console.log(currentDate);
 
 // Math
+
 console.log(Math.PI); // Output: 3.141592653589793
 console.log(Math.sqrt(16)); // Output: 4
 
