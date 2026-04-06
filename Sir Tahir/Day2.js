@@ -20,12 +20,6 @@ let person = {
 
 
 
-
-
-
-
-
-
 // accessing object properties
 console.log(person.name); // Output: Junaid
 console.log(person.age); // Output: 30
